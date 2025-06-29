@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  font-size: 4em;
+  color: #007bff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10em;
+  gap: 1em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 80dvh;
+  height: 80dvh;
+  border: 4px solid #000000;
+  flex-wrap: wrap;
+  gap: 0.1em;
+  background-color: #000000;
+}
+.container .cards {
+  width: calc((100% - 0.5em) / 4);
+  height: calc((100% - 0.5em) / 4);
+  perspective: 1000px;
+  transform: rotateY(0deg);
+  transition: transform 1s ease;
+  background: transparent;
+  border: none;
+}
+
+.container .cards .front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  transition: transform 1s ease;
+}
+
+.container .cards img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .cards .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: transform 1s ease;
+}
+
+.main .score {
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .score h2 {
+  margin: 10px 0;
+  color: #007bff;
+}
+
+.main .score .txt1 {
+  font-size: 2.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.main .score .values {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .score .values h2 {
+  margin: 5px 0;
+  color: #333;
+}
+
+.main .score .values span {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #007bff;
+}
+
+.main .score .buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.main .score .buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* .container .cards:hover {
+  transform: rotateY(180deg);
+  transition: transform 10s ease;
+}
+
+.container .cards:hover .front {
+  transform: rotateY(180deg);
+  transition: transform 1s ease;
+}
+
+.container .cards:hover .back {
+  transform: rotateY(0deg);
+  transition: transform 1s ease;
+} */
